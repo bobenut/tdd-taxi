@@ -8,6 +8,7 @@ public class AppRunner {
 
     public static void main(String[] args) {
         String testDataFile = args[0];
+        System.out.println(String.format("arg0: %s", testDataFile));
         String receipt = calculateFareFromFile(testDataFile);
         System.out.println(receipt);
     }
