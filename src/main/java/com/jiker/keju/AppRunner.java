@@ -6,7 +6,10 @@ public class AppRunner {
 
     public static void main(String[] args) {
         String testDataFile = args[0];
-        System.out.println(String.format("arg0: %s", System.getProperty("user.dir")));
+        String userDir = System.getProperty("user.dir");
+        String inputPath = String.format("%s/%s", userDir, "input.txt");
+        File file = new File(inputPath);
+        System.out.println(String.format("arg0: %s => is %s", inputPath, file.exists()));
         readfile(System.getProperty("user.dir"));
         String receipt = calculateFareFromFile(testDataFile);
         System.out.println(receipt);
