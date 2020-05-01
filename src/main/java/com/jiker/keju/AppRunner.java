@@ -14,7 +14,7 @@ public class AppRunner {
         String result = "";
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            result = readLineFromBuffeReader(br);
+            result = calculateAllLinesFromBuffeReader(br);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -22,7 +22,7 @@ public class AppRunner {
         return result;
     }
 
-    private static String readLineFromBuffeReader(BufferedReader bufferedReader) throws IOException {
+    private static String calculateAllLinesFromBuffeReader(BufferedReader bufferedReader) throws IOException {
         String result = "";
         Taxi taxi = new Taxi();
         String line = null;
