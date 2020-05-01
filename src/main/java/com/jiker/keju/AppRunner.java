@@ -5,14 +5,7 @@ import java.io.*;
 public class AppRunner {
 
     public static void main(String[] args) {
-
-//        String userDir = System.getProperty("user.dir");
-        String userDir = "src/main/resources";
-        String inputPath = String.format("%s/%s", userDir, "input.txt");
-        File file = new File(inputPath);
-        System.out.println(String.format("arg0: %s => is %s", inputPath, file.exists()));
-
-        String testDataFile = args[0];
+        String testDataFile = String.format("src/main/resources/%s", args[0]);
         String receipt = calculateFareFromFile(testDataFile);
         System.out.println(receipt);
     }
